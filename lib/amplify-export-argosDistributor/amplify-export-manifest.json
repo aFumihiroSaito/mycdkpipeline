@@ -1,0 +1,32 @@
+{
+  "stackName": "amplify-argosdistributor-dev-144231",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-argosdistributor-dev-144231-authRole",
+      "UnauthRoleName": "amplify-argosdistributor-dev-144231-unauthRole",
+      "DeploymentBucketName": "amplify-argosdistributor-dev-144231-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "apidistributor": {
+        "templateFile": "api/distributor/distributor-cloudformation-template.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "functionargosDistributor": {
+        "templateFile": "function/argosDistributor/argosDistributor-cloudformation-template.json",
+        "parameters": {
+          "deploymentBucketName": "amplify-argosdistributor-dev-144231-deployment",
+          "s3Key": "amplify-builds/argosDistributor-6868566747336f41616f-build.zip",
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}

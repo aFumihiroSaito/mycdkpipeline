@@ -1,0 +1,12 @@
+[
+  {
+    "category": "function",
+    "resourceName": "argosDistributor",
+    "service": "Lambda"
+  },
+  {
+    "category": "api",
+    "resourceName": "distributor",
+    "service": "API Gateway"
+  }
+]
